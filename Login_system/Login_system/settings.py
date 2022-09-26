@@ -10,6 +10,8 @@ CONTENT_DIR = os.path.join(BASE_DIR, 'content')
 SECRET_KEY = "django-insecure-v&bww*=z(j+34n)@w8a++a4xj8uxc-4*+dwx0s#zwnrp@#dcjy"
 DEBUG = True
 ALLOWED_HOSTS = []
+SITE_ID = 1
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -18,7 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'accounts',
-     # Vendor apps
+    # Vendor apps
     'bootstrap4',
 
 ]
@@ -35,19 +37,20 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "Login_system.urls"
 
+
 TEMPLATES = [
     {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-         'DIRS': [
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
             os.path.join(CONTENT_DIR, 'templates'),
         ],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -66,9 +69,9 @@ WSGI_APPLICATION = "Login_system.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
